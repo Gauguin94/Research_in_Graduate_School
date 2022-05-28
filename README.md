@@ -78,6 +78,7 @@ X = torch.cat(X_, axis=2) # shape of capital 'X' is (64, 128, 60) => (Batch size
 > 아래의 그림과 같은 연산을 수행하게 된다.  
 > 이로써 초기 입력값의 패턴과 feature map들의 패턴의 조합에서  
 > 새로운 패턴을 발견할 수 있는, 새로운 학습효과를 기대할 수 있다.  
+> (Height에 맞춰 Weight 또한 늘어난다.)  
 > 단, 그대로 전달하면 연산이 불가능하기 때문에  
 > 연산이 가능하도록 tensor의 shape만 맞춰주는 작업을 수행한다.  
 > 아래 그림은 위의 그림과 다르게 편의상 transpose된 tensor로 표현하였다.  
