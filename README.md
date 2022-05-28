@@ -67,7 +67,7 @@
 > 구현된 모델은 concatenation 연산을 수행하는 부분은 동일하지만,  
 > channel-wise가 아닌, 위 그림에서의 Height를 늘리는 결과의 concatenation을 수행한다.  
 ```python
-X_ = [x1, x2] # if small 'x''s shape is (64, 128, 60) => (Batch size, Channel, Height)
+X_ = [x1, x2] # if small 'x''s shape is (64, 128, 30) => (Batch size, Channel, Height)
 X = torch.cat(X_, axis=2) # capital 'X''s shape is (64, 128, 60) => (Batch size, Channel, Height)
 ```
 > 모델로 들어오기 이전인, 가장 초기의 입력값(x)과 feature map(h(x))들을 concatenation하여  
