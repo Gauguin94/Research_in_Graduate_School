@@ -6,8 +6,8 @@
 > 본 모델에서는 학습 및 성능평가를 위해  
 > MIT-BIH arrhythmia database(부정맥 데이터베이스)를 이용하였다.  
    
-## MIT-BIH arrhythmia database
-### 링크: [MIT-BIH arrhythmia database in physionet.org](https://www.physionet.org/content/mitdb/1.0.0/)  
+## MIT-BIH 부정맥 데이터베이스(MIT-BIH arrhythmia DB)
+### 링크: [MIT-BIH arrhythmia DB in physionet.org](https://www.physionet.org/content/mitdb/1.0.0/)  
 ### DB 다운로드 링크: [ECG Heartbeat Categorization Dataset](https://www.kaggle.com/datasets/shayanfazeli/heartbeat)  
 >   
 > MIT-BIH 부정맥 데이터베이스는 Beth Israel Deaconess Medical Center(hospital, BIH)와  
