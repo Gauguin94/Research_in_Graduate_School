@@ -1,4 +1,4 @@
-# ResNet을 변형하여 만든 모델로 ECG 데이터 분류하기.
+# ResNet을 변형하여 만든 모델로 ECG 데이터 분류
 ## 심전도 데이터(ElectroCardioGram, ECG)  
 >  
 > 심전도는 심장 박동을 일으키는 전위를 기록한 그래프이다.  
