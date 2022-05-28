@@ -54,8 +54,17 @@
 ------
 ![2차원텐서연산](https://user-images.githubusercontent.com/98927470/170822360-0387ee57-d925-462a-9804-6194108137ab.PNG)  
 > 미리보는 전체 구조 그림에서, "proposed connection"이라고 표시된 부분이 보인다.  
-> proposed connection을 이야기하기 전에 짚고 넘어가야할 것이 있다.
+> proposed connection을 이야기하기 전에 짚고 넘어가야할 것이 있다.  
 > 보편적으로 사용되는 합성곱 연산(conv2d)에서는 위와 같은 기준을 갖고 연산이 진행된다.  
 > 하지만 필자는 conv1d를 사용하였고, conv1d에서의 연산은 아래와 같이 진행된다.  
   
 ![1차원텐서연산](https://user-images.githubusercontent.com/98927470/170822407-6b822a64-a8d2-4c63-b6c5-6a766bd747c3.PNG)  
+  
+> proposed connection은 제일 처음으로 모델에 들어오는 입력을 표시된 각 부분에 전달하는 역할을 한다.  
+> 각 부분에 전달된 값들은 그 부분에 존재하는, feature map과 concatenation 연산을 수행한다.  
+> concatenation 연산을 사용한 유명 모델로는 DenseNet이 존재하는데,  
+> DenseNet은 feature map 간 channel-wise concatenation 연산을 수행한다.  
+> 구현된 모델은 concatenation 연산을 수행하는 부분은 동일하지만,  
+> channel-wise가 아닌,
+> 단, 그대로 전달하면 연산이 불가능하기 때문에  
+> 연산이 가능하도록 tensor의 shape만 맞춰주는 작업을 수행한다.  
