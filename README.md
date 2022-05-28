@@ -17,7 +17,7 @@
 > 총 48명의 기록으로 구성된 데이터베이스이다.  
   
 ## 데이터 구성  
-> ![데이터구성](https://user-images.githubusercontent.com/98927470/170815473-22bf99ac-ca95-44bf-a327-460074fe2cd1.PNG)
+![데이터구성](https://user-images.githubusercontent.com/98927470/170815473-22bf99ac-ca95-44bf-a327-460074fe2cd1.PNG)
 >   
 > DB 다운로드 링크를 통해 데이터셋을 다운로드 받으면,  
 > MIT-BIH와 관련된 데이터는, train data 87,554개와 test data 18,118개로 구성되어 있다.  
@@ -25,5 +25,8 @@
 > 각 벡터의 차원(dimension, 이해하기 어렵다면 길이라고 생각)의 끝에 존재한다.  
 > 각 벡터는 레이블 포함 183의 차원으로 구성되어 있다.  
 > 레이블을 제외한 차원은 심전도의 파형(wave)에 대한 정보이다.  
-
+> 각 레이블의 정보는 아래와 같다.  
+>   
+![레이블](https://user-images.githubusercontent.com/98927470/170815989-23e8a9a3-9409-47bf-b871-3c09477242ad.PNG)  
+  
 ## 모델 구현
