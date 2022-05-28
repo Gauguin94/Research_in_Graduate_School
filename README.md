@@ -28,25 +28,34 @@
 > 상단의 그림과 같이 레이블(클래스)이 달려있는데,  
 > 각 샘플은 레이블 포함 길이 183의 시계열 데이터(time-series)로 구성되어 있다.  
 > 레이블은 각 샘플의 끝에 존재한다. (ex) ecg[182] => 레이블)  
-> 레이블을 제외한 샘플 내 데이터는 심전도의 파형(wave)에 대한 정보이다. (ex) ecg[:181])  
+> 레이블을 제외한 샘플 내 데이터는 심전도의 time step에 대응되는 값, 즉, 파형(wave)에 대한 정보이다. (ex) ecg[:181])  
 > 각 레이블의 정보는 아래와 같다.  
 > reference: [ECG Heartbeat Classification: A Deep Transferable Representation](https://ieeexplore.ieee.org/abstract/document/8419425?casa_token=eOgA0A3Y3ngAAAAA:3D7mV0mtBCoIOmHrnHeCuADPcATXi7SCM7juaQ4McrrWKJehT1mfQQzLUYy48tNFoZQDNh2GFKOe)  
   
 ![레이블](https://user-images.githubusercontent.com/98927470/170815989-23e8a9a3-9409-47bf-b871-3c09477242ad.PNG)  
   
 ## 모델 구현
-### 미리보는 전체 구조 그림
+### 미리보는 전체 구조 그림  
+------
 ![블록구조](https://user-images.githubusercontent.com/98927470/170817186-2dd9debc-336d-4bc2-98df-dd0851eebd5a.png)  
 ![계층구조](https://user-images.githubusercontent.com/98927470/170817723-391569db-17dc-46b6-925b-e8870933a4ee.png)  
-### ResNet & ResNeXt  
   
+  
+### ResNet & ResNeXt  
+------
 > 기울기 소실을 완화하고자 ResNet의 Residual learning 기법을 사용하였다.  
 > 앙상블 기법과 비슷하게 입력이, 혹은 이전 단의 출력이 여러 갈래로 나뉘어 다음 단으로 진입하도록  
 > 네트워크를 구성하였다. 하지만 완전히 앙상블과 똑같다고 말할 수는 없다.  
 > ResNeXt의 기법을 사용하였기 때문인데, 나뉘어진 입력, 혹은 이전 단의 출력들이  
 > 독립적으로 훈련되는게 아니기 때문이다.  
   
-### Proposed connection  
   
+### Proposed connection  
+------
+![2차원텐서연산](https://user-images.githubusercontent.com/98927470/170822360-0387ee57-d925-462a-9804-6194108137ab.PNG)  
 > 미리보는 전체 구조 그림에서, "proposed connection"이라고 표시된 부분이 보인다.  
-> 
+> proposed connection을 이야기하기 전에 짚고 넘어가야할 것이 있다.
+> 보편적으로 사용되는 합성곱 연산(conv2d)에서는 위와 같은 기준을 갖고 연산이 진행된다.  
+> 하지만 필자는 conv1d를 사용하였고, conv1d에서의 연산은 아래와 같이 진행된다.  
+  
+![1차원텐서연산](https://user-images.githubusercontent.com/98927470/170822407-6b822a64-a8d2-4c63-b6c5-6a766bd747c3.PNG)  
