@@ -66,7 +66,7 @@
 > DenseNet은 feature map 간 channel-wise concatenation 연산을 수행한다.  
 > 구현된 모델은 concatenation 연산을 수행하는 부분은 동일하지만,  
 > channel-wise가 아닌, 위 그림에서의 Height를 늘리는 결과의 concatenation을 수행한다.  
-> 모델로 들어오기 이전인, 가장 초기의 입력값과 feature map들을 concatenation하여  
+> 모델로 들어오기 이전인, 가장 초기의 입력값(x)과 feature map(h(x))들을 concatenation하여  
 > 아래의 그림과 같은 연산을 수행하게 된다.  
 > 이로써 초기 입력값의 패턴과 feature map들의 패턴의 조합에서  
 > 새로운 패턴을 발견할 수 있는, 새로운 학습효과를 기대할 수 있다.  
