@@ -26,10 +26,10 @@
 > DB 다운로드 링크를 통해 데이터셋을 다운로드 받으면,  
 > MIT-BIH와 관련된 데이터는, train data 87,554개와 test data 18,118개로 구성되어 있다.  
 > 상단의 그림과 같이 레이블(클래스)이 달려있는데,  
-> 각 벡터의 차원(dimension, 이해하기 어렵다면 길이라고 생각)의 끝에 존재한다.  
-> 각 벡터는 레이블 포함 183 차원의 시계열 데이터(time-series)로 구성되어 있다.  
-> 레이블을 제외한 차원은 심전도의 파형(wave)에 대한 정보이다.  
-> 각 레이블의 정보는 아래와 같다.   
+> 각 샘플은 레이블 포함 길이 183의 시계열 데이터(time-series)로 구성되어 있다.  
+> 레이블은 각 샘플의 끝에 존재한다. (ex) ecg[182] => 레이블)  
+> 레이블을 제외한 샘플 내 데이터는 심전도의 파형(wave)에 대한 정보이다. (ex) ecg[:181])  
+> 각 레이블의 정보는 아래와 같다.  
 > reference: [ECG Heartbeat Classification: A Deep Transferable Representation](https://ieeexplore.ieee.org/abstract/document/8419425?casa_token=eOgA0A3Y3ngAAAAA:3D7mV0mtBCoIOmHrnHeCuADPcATXi7SCM7juaQ4McrrWKJehT1mfQQzLUYy48tNFoZQDNh2GFKOe)  
   
 ![레이블](https://user-images.githubusercontent.com/98927470/170815989-23e8a9a3-9409-47bf-b871-3c09477242ad.PNG)  
@@ -46,3 +46,7 @@
 > ResNeXt의 기법을 사용하였기 때문인데, 나뉘어진 입력, 혹은 이전 단의 출력들이  
 > 독립적으로 훈련되는게 아니기 때문이다.  
   
+### Proposed connection  
+  
+> 미리보는 전체 구조 그림에서, "proposed connection"이라고 표시된 부분이 보인다.  
+> 
