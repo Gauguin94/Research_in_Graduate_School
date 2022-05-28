@@ -24,7 +24,7 @@
 ![데이터구성](https://user-images.githubusercontent.com/98927470/170815473-22bf99ac-ca95-44bf-a327-460074fe2cd1.PNG)
 >   
 > DB 다운로드 링크를 통해 데이터셋을 다운로드 받으면,  
-> MIT-BIH와 관련된 데이터는, train data 87,554개와 test data 18,118개로 구성되어 있다.  
+> MIT-BIH와 관련된 데이터는, train data 87,554개와 test data 21,892개로 구성되어 있다.  
 > 상단의 그림과 같이 레이블(클래스)이 달려있는데,  
 > 각 샘플은 레이블 포함 길이 183의 시계열 데이터(time-series)로 구성되어 있다.  
 > 레이블은 각 샘플의 끝에 존재한다. (ex) ecg[182] => 레이블)  
@@ -78,4 +78,8 @@ X = torch.cat(X_, axis=2) # shape of capital 'X' is (64, 128, 60) => (Batch size
 > 연산이 가능하도록 tensor의 shape만 맞춰주는 작업을 수행한다.  
 > 아래 그림은 위의 그림과 다르게 편의상 transpose된 tensor로 표현하였다.  
   
-![새로운기법](https://user-images.githubusercontent.com/98927470/170823446-9c20e6c7-7e46-46d5-be4b-6b081d986316.png)
+![새로운기법](https://user-images.githubusercontent.com/98927470/170823446-9c20e6c7-7e46-46d5-be4b-6b081d986316.png)  
+  
+## 결과
+  
+
