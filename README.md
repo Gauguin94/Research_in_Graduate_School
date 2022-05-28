@@ -81,7 +81,6 @@ X = torch.cat(X_, axis=2) # shape of capital 'X' is (64, 128, 60) => (Batch size
 > 단, 그대로 전달하면 연산이 불가능하기 때문에  
 > 연산이 가능하도록 tensor의 shape만 맞춰주는 작업을 수행한다.  
 > 아래 그림은 위의 그림과 다르게 편의상 transpose된 tensor로 표현하였다.  
-  
 ![새로운기법](https://user-images.githubusercontent.com/98927470/170823446-9c20e6c7-7e46-46d5-be4b-6b081d986316.png)  
   
 ## 결과
