@@ -1,6 +1,7 @@
 # ResNet을 변형하여 만든 모델로 ECG 데이터 분류
 ## 심전도 데이터(ElectroCardioGram, ECG)  
->  
+![ecg_1period](https://user-images.githubusercontent.com/98927470/170815322-c0cd92cd-84c1-400a-a077-90cf37ab205a.jpg)  
+> reference: [링크](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=ddongssanbaj&logNo=220216005366)  
 > 심전도는 심장 박동을 일으키는 전위를 기록한 그래프이다.  
 > 본 모델에서는 학습 및 성능평가를 위해  
 > MIT-BIH arrhythmia database(부정맥 데이터베이스)를 이용하였다.  
