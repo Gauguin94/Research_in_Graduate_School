@@ -35,6 +35,8 @@
   
 ![레이블](https://user-images.githubusercontent.com/98927470/170815989-23e8a9a3-9409-47bf-b871-3c09477242ad.PNG)  
   
+![데이터세부구성](https://user-images.githubusercontent.com/98927470/170824254-6f582ec4-446e-4df8-b99c-3ec411c36e5d.PNG)  
+  
 ## 모델 구현
 ### 미리보는 전체 구조 그림  
 ------
@@ -84,4 +86,8 @@ X = torch.cat(X_, axis=2) # shape of capital 'X' is (64, 128, 60) => (Batch size
   
 ## 결과
   
-
+![결과](https://user-images.githubusercontent.com/98927470/170824330-3e595749-5860-4fd8-a294-dff7664b9997.PNG)
+  
+>  위 사진은 분류 정확도, 민감도(재현율), 정밀도,  
+>  민감도와 정밀도의 조화평균, 그리고 Test data에 대한 Confusion Matrix를 나타낸 그림이다.  
+  
