@@ -58,7 +58,7 @@
 > proposed connection을 이야기하기 전에 짚고 넘어가야할 것이 있다.  
 > 보편적으로 사용되는 합성곱 연산(conv2d)에서는 위와 같은 기준을 갖고 연산이 진행된다.  
 > 하지만 필자는 conv1d를 사용하였고, conv1d에서의 연산은 아래와 같이 진행된다.  
-  
+> 각 샘플에서의 time-step에 대응되는 값들이 height에 해당한다!  
 ![1차원텐서연산](https://user-images.githubusercontent.com/98927470/170822407-6b822a64-a8d2-4c63-b6c5-6a766bd747c3.PNG)  
   
 > proposed connection은 제일 처음으로 모델에 들어오는 입력을 표시된 각 부분에 전달하는 역할을 한다.  
