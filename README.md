@@ -65,6 +65,13 @@
 > concatenation 연산을 사용한 유명 모델로는 DenseNet이 존재하는데,  
 > DenseNet은 feature map 간 channel-wise concatenation 연산을 수행한다.  
 > 구현된 모델은 concatenation 연산을 수행하는 부분은 동일하지만,  
-> channel-wise가 아닌,
+> channel-wise가 아닌, 위 그림에서의 Height를 늘리는 결과의 concatenation을 수행한다.  
+> 모델로 들어오기 이전인, 가장 초기의 입력값과 feature map들을 concatenation하여  
+> 아래의 그림과 같은 연산을 수행하게 된다.  
+> 이로써 초기 입력값의 패턴과 feature map들의 패턴의 조합에서  
+> 새로운 패턴을 발견할 수 있는, 새로운 학습효과를 기대할 수 있다.  
 > 단, 그대로 전달하면 연산이 불가능하기 때문에  
 > 연산이 가능하도록 tensor의 shape만 맞춰주는 작업을 수행한다.  
+> 아래 그림은 위의 그림과 다르게 편의상 transpose된 tensor로 표현하였다.  
+  
+![새로운기법](https://user-images.githubusercontent.com/98927470/170823446-9c20e6c7-7e46-46d5-be4b-6b081d986316.png)
