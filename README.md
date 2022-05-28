@@ -1,14 +1,14 @@
 # ResNet을 변형하여 만든 모델로 ECG 데이터 분류
 ## 심전도 데이터(ElectroCardioGram, ECG)  
 ![ecg_1period](https://user-images.githubusercontent.com/98927470/170815322-c0cd92cd-84c1-400a-a077-90cf37ab205a.jpg)  
-> reference: [링크](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=ddongssanbaj&logNo=220216005366)  
+> reference: [강원도 블루베리 농부](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=ddongssanbaj&logNo=220216005366)  
 > 심전도는 심장 박동을 일으키는 전위를 기록한 그래프이다.  
 > 본 모델에서는 학습 및 성능평가를 위해  
 > MIT-BIH arrhythmia database(부정맥 데이터베이스)를 이용하였다.  
    
 ## MIT-BIH 부정맥 데이터베이스(MIT-BIH arrhythmia DB)
-### 링크: [MIT-BIH arrhythmia DB in physionet.org](https://www.physionet.org/content/mitdb/1.0.0/)  
-### DB 다운로드 링크: [ECG Heartbeat Categorization Dataset](https://www.kaggle.com/datasets/shayanfazeli/heartbeat)  
+### 데이터 관련: [MIT-BIH arrhythmia DB in physionet.org](https://www.physionet.org/content/mitdb/1.0.0/)  
+### DB 다운로드: [ECG Heartbeat Categorization Dataset](https://www.kaggle.com/datasets/shayanfazeli/heartbeat)  
 >   
 > MIT-BIH 부정맥 데이터베이스는 Beth Israel Deaconess Medical Center(hospital, BIH)와  
 > MIT에서 1975년부터 1979년까지 시행한 연구에서부터 얻어낸 4,000개 이상의  
@@ -26,7 +26,7 @@
 > 각 벡터는 레이블 포함 183의 차원으로 구성되어 있다.  
 > 레이블을 제외한 차원은 심전도의 파형(wave)에 대한 정보이다.  
 > 각 레이블의 정보는 아래와 같다.  
->   
+> reference: [ECG Heartbeat Classification: A Deep Transferable Representation](https://ieeexplore.ieee.org/abstract/document/8419425?casa_token=eOgA0A3Y3ngAAAAA:3D7mV0mtBCoIOmHrnHeCuADPcATXi7SCM7juaQ4McrrWKJehT1mfQQzLUYy48tNFoZQDNh2GFKOe)  
 ![레이블](https://user-images.githubusercontent.com/98927470/170815989-23e8a9a3-9409-47bf-b871-3c09477242ad.PNG)  
   
 ## 모델 구현
