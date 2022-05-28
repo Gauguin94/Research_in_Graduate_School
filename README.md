@@ -25,8 +25,9 @@
 > 각 벡터의 차원(dimension, 이해하기 어렵다면 길이라고 생각)의 끝에 존재한다.  
 > 각 벡터는 레이블 포함 183의 차원으로 구성되어 있다.  
 > 레이블을 제외한 차원은 심전도의 파형(wave)에 대한 정보이다.  
-> 각 레이블의 정보는 아래와 같다.  
+> 각 레이블의 정보는 아래와 같다.   
 > reference: [ECG Heartbeat Classification: A Deep Transferable Representation](https://ieeexplore.ieee.org/abstract/document/8419425?casa_token=eOgA0A3Y3ngAAAAA:3D7mV0mtBCoIOmHrnHeCuADPcATXi7SCM7juaQ4McrrWKJehT1mfQQzLUYy48tNFoZQDNh2GFKOe)  
+  
 ![레이블](https://user-images.githubusercontent.com/98927470/170815989-23e8a9a3-9409-47bf-b871-3c09477242ad.PNG)  
   
 ## 모델 구현
