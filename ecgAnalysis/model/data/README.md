@@ -43,4 +43,4 @@ class setData:
 ```  
   
 > Dataloader를 통해 DB를 128 크기의 배치로 저장한다.  
-> train, validation, test에 쓰일 데이터로 각각 나눠주도록 한다.  
+> train, validation, test에 쓰일 데이터로 나눠주도록 한다.  
