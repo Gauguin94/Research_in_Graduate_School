@@ -103,4 +103,47 @@ def new_identity(dim, floor_num, div_num):
 
 ## 2. train.py  
 > **훈련 방법**  
-> 
+> (1) Optimizer(최적화 도구)  
+```python
+optimizer = adabound.AdaBound(model.parameters(), lr = lr, final_lr = 0.1)
+```  
+>> 최적화 도구로는 adam과 같은 ada 계열의 adabound를 사용하였다.  
+>> adam과 비교하였을 때, 조금 더 나은 성능을 보여 이를 사용하게 되었다.  
+>> reference: [Adaptive Gradient Methods with Dynamic Bound of Learning Rate](https://openreview.net/forum?id=Bkg3g2R9FX)  
+>  
+> (2) Loss function(손실 함수)  
+```python
+class FocalLoss(nn.Module):
+    def __init__(self, gamma = 0, alpha = None, size_average = True):
+        super(FocalLoss, self).__init__()
+        self.gamma = gamma
+        self.alpha = alpha
+        if isinstance(alpha, (float, int, float)): self.alpha = torch.Tensor([alpha, 1-alpha])
+        if isinstance(alpha, list): self.alpha = torch.Tensor(alpha)
+        self.size_average = size_average
+
+    def forward(self, input, target):
+        if input.dim()>2:
+            input = input.view(input.size(0), input.size(1), -1)
+            input = input.transpose(1, 2)
+            input = input.contiguous().view(-1, input.size(2))
+        target = target.view(-1, 1)
+
+        logpt = F.log_softmax(input)
+        logpt = logpt.gather(1, target)
+        logpt = logpt.view(-1)
+        pt = Variable(logpt.data.exp())
+
+        if self.alpha is not None:
+            if self.alpha.type() != input.data.type():
+                self.alpha = self.alpha.type_as(input.data)
+            at = self.alpha.gather(0, target.data.view(-1))
+            logpt = logpt*Variable(at)
+        loss = -1 * (1 - pt) ** self.gamma * logpt
+        if self.size_average: return loss.mean()
+        else: return loss.sum() 
+```  
+>> 손실 함수로는 Focal loss를 사용하였다.  
+>> Focal loss는 학습 중 클래스 불균형 문제가 심한 것을 고려하여 제안된 기법이다.  
+
+![focalloss](https://user-images.githubusercontent.com/98927470/170855379-63c570ed-09cf-474e-ba19-94e16ef32b01.png)
