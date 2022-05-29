@@ -145,5 +145,25 @@ class FocalLoss(nn.Module):
 ```  
 >> 손실 함수로는 Focal loss를 사용하였다.  
 >> Focal loss는 학습 중 클래스 불균형 문제가 심한 것을 고려하여 제안된 기법이다.  
-
-![focalloss](https://user-images.githubusercontent.com/98927470/170855379-63c570ed-09cf-474e-ba19-94e16ef32b01.png)
+>>  
+![focalloss](https://user-images.githubusercontent.com/98927470/170855379-63c570ed-09cf-474e-ba19-94e16ef32b01.png)  
+  
+>> Cross Entrophy의 식은 아래와 같이 나타낼 수 있다.  
+>> *CE = -Y<sub>ans</sub>\*log(p)-(1-Y<sub>ans</sub>)\*log⁡(1-p)*  
+>> *if) Y<sub>ans</sub> = 1, CE(p,Y<sub>ans</sub>) = -log⁡(p)+0*  
+>> Y<sub>ans</sub>=1인 경우에 대해 살펴보자.  
+>> *p*의 값이 1이라면 Loss는 0이 된다. 모델의 출력이 실제 정답과 같다는 것을 나타내며,  
+>> 일반적으로 모델의 성능이 좋은 경우라고 할 수 있다.  
+>> 반면 *p*의 값이 0에 가까운 값이라면 결과가 무한대에 점점 가까워진다.  
+>> Focal loss는 합성곱 신경망을 기반으로 한 모델인 RetinaNet으로 성능이 입증된 손실 함수이다.  
+>> 상단의 그래프에서 볼 수 있는 식과 같이 Focal loss는 Cross Entrophy에 *(1-p<sub>t</sub>)<sup>r</sup>* 을 곱한 형태이다.  
+>> *p<sub>t</sub>* 는 ground truth를 맞춘 경우를 나타낸 확률 값이며,  
+>> *r*이 0이라면 Focal loss는 Cross Entrophy와 같다.  
+>> 반대로 *r*의 크기가 커질수록 곡선의 곡률이 커지게 된다.  
+>> 여기서 *r*은 focusing parameter라고 하며 조정 가능한 파라미터이다.  
+>> *r*이 0인 경우(Cross Entrophy)와 *r*이 5인 경우를 비교해보면,  
+>> *p<sub>t</sub>* 가 높은 구간에 대응되는 Loss들은 0에 가깝기 때문에  
+>> 학습 진행 간 해당 구간의 Loss가 갱신되더라도 전체적인 Loss에 끼치는 영향이 적음을 알 수 있다.  
+>> (Loss는 결국 모든 Loss를 더한 뒤 출력된 개수만큼 나누어 평균을 구한 값이기 때문.)  
+>> 이와 같은 이유로, 학습 데이터 불균형을 어느 정도 해소하고자 Focal loss를 사용하였다.  
+>> reference: [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002)
