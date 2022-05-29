@@ -53,7 +53,7 @@ def make_conv(in_dim, mid_dim, out_dim, down = False):
     return nn.Sequential(*layers).to(device)
 ```  
 >   
-> ResNeXt와 같은 합성곱 방식을 채택하였다. (groups 인자 사용)  
+> ResNeXt와 같은 그룹합성곱 방식을 채택하였다. (groups 인자 사용)  
 >   
 >> ### New connection  
 ```python
