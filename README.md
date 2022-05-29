@@ -96,3 +96,5 @@ X = torch.cat(X_, axis=2) # shape of capital 'X' is (64, 128, 60) => (Batch size
 >  하지만 세상의 모든 데이터는 이와 같은 불균형을 이루고 있다.  
 >  이와 같은 데이터 불균형을 어느정도 완화하거나, 완벽히 해소하는 것이 앞으로의 과제일 것이다.  
   
+# 코드  
+[WARP](https://github.com/Gauguin94/Research_in_Graduate_School/tree/main/ecgAnalysis) <- click  
